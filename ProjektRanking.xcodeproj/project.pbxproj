@@ -14,6 +14,8 @@
 		0E06A1A21E8BA5420018326F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E06A1A01E8BA5420018326F /* LaunchScreen.storyboard */; };
 		0E06A1AC1E8BAD3D0018326F /* RecentGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E06A1AB1E8BAD3D0018326F /* RecentGameCell.swift */; };
 		1C7DA04C1E9E278B004D535E /* CustomHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DA04B1E9E278B004D535E /* CustomHeaderCell.swift */; };
+		1C7DA0521E9E3952004D535E /* RankingHeadersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DA0511E9E3952004D535E /* RankingHeadersCell.swift */; };
+		1C7DA0541E9E3B41004D535E /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DA0531E9E3B41004D535E /* RankingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		0E06A1A31E8BA5420018326F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E06A1AB1E8BAD3D0018326F /* RecentGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentGameCell.swift; sourceTree = "<group>"; };
 		1C7DA04B1E9E278B004D535E /* CustomHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderCell.swift; sourceTree = "<group>"; };
+		1C7DA0511E9E3952004D535E /* RankingHeadersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingHeadersCell.swift; sourceTree = "<group>"; };
+		1C7DA0531E9E3B41004D535E /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,34 @@
 		0E06A1961E8BA5420018326F /* ProjektRanking */ = {
 			isa = PBXGroup;
 			children = (
+				1C7DA04D1E9E35FF004D535E /* ViewControllers */,
+				1C7DA04E1E9E3618004D535E /* Cells */,
 				0E06A1971E8BA5420018326F /* AppDelegate.swift */,
-				0E06A1991E8BA5420018326F /* ViewController.swift */,
 				0E06A19B1E8BA5420018326F /* Main.storyboard */,
 				0E06A19E1E8BA5420018326F /* Assets.xcassets */,
 				0E06A1A01E8BA5420018326F /* LaunchScreen.storyboard */,
 				0E06A1A31E8BA5420018326F /* Info.plist */,
-				0E06A1AB1E8BAD3D0018326F /* RecentGameCell.swift */,
-				1C7DA04B1E9E278B004D535E /* CustomHeaderCell.swift */,
 			);
 			path = ProjektRanking;
+			sourceTree = "<group>";
+		};
+		1C7DA04D1E9E35FF004D535E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0E06A1991E8BA5420018326F /* ViewController.swift */,
+				1C7DA0531E9E3B41004D535E /* RankingViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1C7DA04E1E9E3618004D535E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0E06A1AB1E8BAD3D0018326F /* RecentGameCell.swift */,
+				1C7DA04B1E9E278B004D535E /* CustomHeaderCell.swift */,
+				1C7DA0511E9E3952004D535E /* RankingHeadersCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +167,9 @@
 				0E06A19A1E8BA5420018326F /* ViewController.swift in Sources */,
 				1C7DA04C1E9E278B004D535E /* CustomHeaderCell.swift in Sources */,
 				0E06A1981E8BA5420018326F /* AppDelegate.swift in Sources */,
+				1C7DA0521E9E3952004D535E /* RankingHeadersCell.swift in Sources */,
 				0E06A1AC1E8BAD3D0018326F /* RecentGameCell.swift in Sources */,
+				1C7DA0541E9E3B41004D535E /* RankingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
