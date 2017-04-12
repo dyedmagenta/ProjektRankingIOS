@@ -13,6 +13,7 @@
 		0E06A19F1E8BA5420018326F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E06A19E1E8BA5420018326F /* Assets.xcassets */; };
 		0E06A1A21E8BA5420018326F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E06A1A01E8BA5420018326F /* LaunchScreen.storyboard */; };
 		0E06A1AC1E8BAD3D0018326F /* RecentGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E06A1AB1E8BAD3D0018326F /* RecentGameCell.swift */; };
+		1C7DA04C1E9E278B004D535E /* CustomHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DA04B1E9E278B004D535E /* CustomHeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0E06A1A11E8BA5420018326F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E06A1A31E8BA5420018326F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E06A1AB1E8BAD3D0018326F /* RecentGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentGameCell.swift; sourceTree = "<group>"; };
+		1C7DA04B1E9E278B004D535E /* CustomHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				0E06A1A01E8BA5420018326F /* LaunchScreen.storyboard */,
 				0E06A1A31E8BA5420018326F /* Info.plist */,
 				0E06A1AB1E8BAD3D0018326F /* RecentGameCell.swift */,
+				1C7DA04B1E9E278B004D535E /* CustomHeaderCell.swift */,
 			);
 			path = ProjektRanking;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E06A19A1E8BA5420018326F /* ViewController.swift in Sources */,
+				1C7DA04C1E9E278B004D535E /* CustomHeaderCell.swift in Sources */,
 				0E06A1981E8BA5420018326F /* AppDelegate.swift in Sources */,
 				0E06A1AC1E8BAD3D0018326F /* RecentGameCell.swift in Sources */,
 			);
@@ -303,6 +307,7 @@
 				0E06A1A81E8BA5430018326F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

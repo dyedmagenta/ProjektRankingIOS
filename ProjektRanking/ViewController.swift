@@ -35,18 +35,28 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecentCell", for: indexPath) as! RecentGameCell
         
-        cell.labelPlayer.text = "Player1 vs Player2"
-        cell.labelTournament.text = "Tournament1"
-        cell.labelDate.text = "29.03.2017"
-        
-        return cell
+        if(indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as! CustomHeaderCell
+            cell.labelPlayer.text = "Players"
+            cell.labelTournament.text = "Tournament"
+            cell.labelDate.text = "Date"
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentCell", for: indexPath) as! RecentGameCell
+            
+            cell.labelPlayer.text = "Player A vs Player B" + String(arc4random_uniform(1000))
+            cell.labelTournament.text = "Tournament abc" + String (arc4random_uniform(100))
+            cell.labelDate.text = String(arc4random_uniform(50))
+            
+            return cell
+        }
     }
     
 }
