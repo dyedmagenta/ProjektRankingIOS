@@ -13,6 +13,10 @@
 		0E06A19F1E8BA5420018326F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E06A19E1E8BA5420018326F /* Assets.xcassets */; };
 		0E06A1A21E8BA5420018326F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E06A1A01E8BA5420018326F /* LaunchScreen.storyboard */; };
 		0E06A1AC1E8BAD3D0018326F /* RecentGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E06A1AB1E8BAD3D0018326F /* RecentGameCell.swift */; };
+		1C002BAE1EB098D700749934 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C002BAD1EB098D700749934 /* AddViewController.swift */; };
+		1C002BB01EB0ADC200749934 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C002BAF1EB0ADC200749934 /* LoginViewController.swift */; };
+		1C002BB21EB0B33900749934 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C002BB11EB0B33900749934 /* MainViewController.swift */; };
+		1C002BB41EB0B8E600749934 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C002BB31EB0B8E600749934 /* ProfileViewController.swift */; };
 		1C7DA04C1E9E278B004D535E /* CustomHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DA04B1E9E278B004D535E /* CustomHeaderCell.swift */; };
 		1C7DA0521E9E3952004D535E /* RankingHeadersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DA0511E9E3952004D535E /* RankingHeadersCell.swift */; };
 		1C7DA0541E9E3B41004D535E /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DA0531E9E3B41004D535E /* RankingViewController.swift */; };
@@ -27,6 +31,10 @@
 		0E06A1A11E8BA5420018326F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E06A1A31E8BA5420018326F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E06A1AB1E8BAD3D0018326F /* RecentGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentGameCell.swift; sourceTree = "<group>"; };
+		1C002BAD1EB098D700749934 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		1C002BAF1EB0ADC200749934 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1C002BB11EB0B33900749934 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1C002BB31EB0B8E600749934 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1C7DA04B1E9E278B004D535E /* CustomHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderCell.swift; sourceTree = "<group>"; };
 		1C7DA0511E9E3952004D535E /* RankingHeadersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingHeadersCell.swift; sourceTree = "<group>"; };
 		1C7DA0531E9E3B41004D535E /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +86,10 @@
 			children = (
 				0E06A1991E8BA5420018326F /* ViewController.swift */,
 				1C7DA0531E9E3B41004D535E /* RankingViewController.swift */,
+				1C002BAD1EB098D700749934 /* AddViewController.swift */,
+				1C002BAF1EB0ADC200749934 /* LoginViewController.swift */,
+				1C002BB11EB0B33900749934 /* MainViewController.swift */,
+				1C002BB31EB0B8E600749934 /* ProfileViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -166,8 +178,12 @@
 			files = (
 				0E06A19A1E8BA5420018326F /* ViewController.swift in Sources */,
 				1C7DA04C1E9E278B004D535E /* CustomHeaderCell.swift in Sources */,
+				1C002BB41EB0B8E600749934 /* ProfileViewController.swift in Sources */,
+				1C002BAE1EB098D700749934 /* AddViewController.swift in Sources */,
 				0E06A1981E8BA5420018326F /* AppDelegate.swift in Sources */,
+				1C002BB01EB0ADC200749934 /* LoginViewController.swift in Sources */,
 				1C7DA0521E9E3952004D535E /* RankingHeadersCell.swift in Sources */,
+				1C002BB21EB0B33900749934 /* MainViewController.swift in Sources */,
 				0E06A1AC1E8BAD3D0018326F /* RecentGameCell.swift in Sources */,
 				1C7DA0541E9E3B41004D535E /* RankingViewController.swift in Sources */,
 			);
