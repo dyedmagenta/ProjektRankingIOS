@@ -13,6 +13,7 @@
 		0E06A19F1E8BA5420018326F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E06A19E1E8BA5420018326F /* Assets.xcassets */; };
 		0E06A1A21E8BA5420018326F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E06A1A01E8BA5420018326F /* LaunchScreen.storyboard */; };
 		0E06A1AC1E8BAD3D0018326F /* RecentGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E06A1AB1E8BAD3D0018326F /* RecentGameCell.swift */; };
+		163802B51EC1D3BD005CC5A2 /* ProjektRanking.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 163802B41EC1D3BD005CC5A2 /* ProjektRanking.xcdatamodel */; };
 		1C002BAE1EB098D700749934 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C002BAD1EB098D700749934 /* AddViewController.swift */; };
 		1C002BB01EB0ADC200749934 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C002BAF1EB0ADC200749934 /* LoginViewController.swift */; };
 		1C002BB21EB0B33900749934 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C002BB11EB0B33900749934 /* MainViewController.swift */; };
@@ -31,6 +32,7 @@
 		0E06A1A11E8BA5420018326F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E06A1A31E8BA5420018326F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E06A1AB1E8BAD3D0018326F /* RecentGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentGameCell.swift; sourceTree = "<group>"; };
+		163802B41EC1D3BD005CC5A2 /* ProjektRanking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjektRanking.xcdatamodel; sourceTree = "<group>"; };
 		1C002BAD1EB098D700749934 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		1C002BAF1EB0ADC200749934 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1C002BB11EB0B33900749934 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				0E06A19B1E8BA5420018326F /* Main.storyboard */,
 				0E06A19E1E8BA5420018326F /* Assets.xcassets */,
 				0E06A1A01E8BA5420018326F /* LaunchScreen.storyboard */,
+				163802B41EC1D3BD005CC5A2 /* ProjektRanking.xcdatamodel */,
 				0E06A1A31E8BA5420018326F /* Info.plist */,
 			);
 			path = ProjektRanking;
@@ -183,6 +186,7 @@
 				0E06A1981E8BA5420018326F /* AppDelegate.swift in Sources */,
 				1C002BB01EB0ADC200749934 /* LoginViewController.swift in Sources */,
 				1C7DA0521E9E3952004D535E /* RankingHeadersCell.swift in Sources */,
+				163802B51EC1D3BD005CC5A2 /* ProjektRanking.xcdatamodel in Sources */,
 				1C002BB21EB0B33900749934 /* MainViewController.swift in Sources */,
 				0E06A1AC1E8BAD3D0018326F /* RecentGameCell.swift in Sources */,
 				1C7DA0541E9E3B41004D535E /* RankingViewController.swift in Sources */,
