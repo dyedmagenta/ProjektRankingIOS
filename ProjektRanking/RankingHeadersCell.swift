@@ -1,4 +1,4 @@
-//
+		//
 //  RankingHeadersCell.swift
 //  ProjektRanking
 //
@@ -12,17 +12,17 @@ class RankingHeadersCell: UITableViewCell {
 
     
     @IBOutlet weak var playersLabel: UILabel!
-    @IBOutlet weak var tournamentLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var rankLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         playersLabel.numberOfLines = 1
-        tournamentLabel.numberOfLines = 1
         dateLabel.numberOfLines = 1
         scoreLabel.numberOfLines = 1
+        rankLabel.numberOfLines = 1
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

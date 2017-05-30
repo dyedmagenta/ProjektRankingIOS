@@ -52,8 +52,7 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource{
         
         if(indexPath.row == 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "RankingHeaders", for: indexPath) as! RankingHeadersCell
-            cell.playersLabel.text = "Players"
-            cell.tournamentLabel.text = "Tournament"
+            cell.playersLabel.text = "Player"
             cell.dateLabel.text = "Date"
             cell.scoreLabel.text = "Score"
             
@@ -62,7 +61,7 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "RankingCell", for: indexPath) as! RankingHeadersCell
             
             cell.playersLabel.text = "Player A vs Player B" + String(arc4random_uniform(1000))
-            cell.tournamentLabel.text = "Tournament abc" + String (arc4random_uniform(100))
+            
             cell.dateLabel.text = String(arc4random_uniform(50))
             cell.scoreLabel.text = String (arc4random_uniform(2)) + " : " + String (arc4random_uniform(2))
             
