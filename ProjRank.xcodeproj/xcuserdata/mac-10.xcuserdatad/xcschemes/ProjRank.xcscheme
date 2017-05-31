@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0E06A1931E8BA5420018326F"
-               BuildableName = "ProjektRanking.app"
-               BlueprintName = "ProjektRanking"
-               ReferencedContainer = "container:ProjektRanking.xcodeproj">
+               BlueprintIdentifier = "0E8683221EDECC820044A18A"
+               BuildableName = "ProjRank.app"
+               BlueprintName = "ProjRank"
+               ReferencedContainer = "container:ProjRank.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0E06A1931E8BA5420018326F"
-            BuildableName = "ProjektRanking.app"
-            BlueprintName = "ProjektRanking"
-            ReferencedContainer = "container:ProjektRanking.xcodeproj">
+            BlueprintIdentifier = "0E8683221EDECC820044A18A"
+            BuildableName = "ProjRank.app"
+            BlueprintName = "ProjRank"
+            ReferencedContainer = "container:ProjRank.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0E06A1931E8BA5420018326F"
-            BuildableName = "ProjektRanking.app"
-            BlueprintName = "ProjektRanking"
-            ReferencedContainer = "container:ProjektRanking.xcodeproj">
+            BlueprintIdentifier = "0E8683221EDECC820044A18A"
+            BuildableName = "ProjRank.app"
+            BlueprintName = "ProjRank"
+            ReferencedContainer = "container:ProjRank.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0E06A1931E8BA5420018326F"
-            BuildableName = "ProjektRanking.app"
-            BlueprintName = "ProjektRanking"
-            ReferencedContainer = "container:ProjektRanking.xcodeproj">
+            BlueprintIdentifier = "0E8683221EDECC820044A18A"
+            BuildableName = "ProjRank.app"
+            BlueprintName = "ProjRank"
+            ReferencedContainer = "container:ProjRank.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
