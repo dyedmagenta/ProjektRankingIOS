@@ -49,7 +49,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentCell", for: indexPath) as! RecentGameCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentCell", for: indexPath) as! CustomHeaderCell
             
             cell.labelPlayer.text = "Player A vs Player B" + String(arc4random_uniform(1000))
             cell.labelTournament.text = "Tournament abc" + String (arc4random_uniform(100))

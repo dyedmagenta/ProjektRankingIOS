@@ -10,16 +10,15 @@ import UIKit
 
 class RecentGameCell: UITableViewCell {
 
-    @IBOutlet weak var labelPlayer: UILabel!
-    @IBOutlet weak var labelTournament: UILabel!
+    @IBOutlet weak var labelPlayer1: UILabel!
+    @IBOutlet weak var labelPlayerChange1: UILabel!
+    @IBOutlet weak var labelPlayer2: UILabel!
+    @IBOutlet weak var labelPlayerChange2: UILabel!
     @IBOutlet weak var labelDate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        labelPlayer.numberOfLines = 1
-        labelTournament.numberOfLines = 1
-        labelDate.numberOfLines = 1
         
         
 

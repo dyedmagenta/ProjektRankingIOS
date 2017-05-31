@@ -10,10 +10,15 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +26,44 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        if(indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as! RecentGameCell
+            cell.labelPlayer1.text = "Player 1"
+            cell.labelPlayer2.text = "Player 2"
+            cell.labelDate.text = "Date"
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentCell", for: indexPath) as! RecentGameCell
+            
+            cell.labelPlayer1.text = "Player " + String(arc4random_uniform(10))
+            cell.labelPlayerChange1.text = "(+ " + String(arc4random_uniform(10)) + ")"
+            cell.labelPlayer2.text = "Player " + String(arc4random_uniform(10))
+            cell.labelPlayerChange2.text = "(- " + String(arc4random_uniform(10)) + ")"
+            cell.labelDate.text = "Date"
+            
+            
+            
+            
+            cell.labelDate.text = String(arc4random_uniform(50))
+            
+            return cell
+        }
+    }
+    
 }
