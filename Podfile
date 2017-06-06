@@ -6,7 +6,7 @@ target 'ProjRank' do
   use_frameworks!
 
   # Pods for ProjRank
-
-pod 'Gloss', '~> 1.2'
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
 
 end

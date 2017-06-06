@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import Alamofire
 
 class RecentGamesViewController: UIViewController {
 
+    var handler: ConnectionHandler = ConnectionHandler()
+    
+    @IBAction func refreshData(_ sender: Any) {
+            handler.refreshAllData()                
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

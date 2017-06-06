@@ -1,12 +1,15 @@
 PODS:
-  - Gloss (1.2.4)
+  - Alamofire (4.4.0)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - Gloss (~> 1.2)
+  - Alamofire
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Gloss: 4e036074610fdb993abcb958ebcd7332588e2333
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 55f9b38dd896aae60f8d1047c5c434022267371f
+PODFILE CHECKSUM: 7a06f63ad5d103eef35c50ff894001b3cd3368e5
 
 COCOAPODS: 1.2.1
