@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Tournament)
+//@objc(Tournament)
 public class Tournament: NSManagedObject {
 
 }

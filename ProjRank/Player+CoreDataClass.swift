@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Player)
+//@objc(Player)
 public class Player: NSManagedObject {
 
 }

@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(News)
+//@objc(News)
 public class News: NSManagedObject {
 
 }
