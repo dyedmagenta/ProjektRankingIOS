@@ -187,6 +187,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="SQu-Qn-TYA"/>
+                    <connections>
+                        <outlet property="recentGamesTable" destination="E2M-9L-SqI" id="aZt-Ic-jfb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

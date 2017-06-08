@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		059547C11EE9779D008CC099 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059547C01EE9779D008CC099 /* DataManager.swift */; };
 		0E589B251EE6DAC5006DFD47 /* ConnectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E589B241EE6DAC5006DFD47 /* ConnectionHandler.swift */; };
 		0E589B5F1EE6E570006DFD47 /* News+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E589B571EE6E570006DFD47 /* News+CoreDataClass.swift */; };
 		0E589B601EE6E570006DFD47 /* News+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E589B581EE6E570006DFD47 /* News+CoreDataProperties.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		059547C01EE9779D008CC099 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0E589B241EE6DAC5006DFD47 /* ConnectionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionHandler.swift; sourceTree = "<group>"; };
 		0E589B571EE6E570006DFD47 /* News+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0E589B581EE6E570006DFD47 /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -72,6 +74,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		059547BF1EE9776E008CC099 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DataManager;
+			sourceTree = "<group>";
+		};
 		0E589B231EE6D99B006DFD47 /* ConnectionHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +125,8 @@
 		0E8683251EDECC820044A18A /* ProjRank */ = {
 			isa = PBXGroup;
 			children = (
+				059547BF1EE9776E008CC099 /* DataManager */,
+				059547C01EE9779D008CC099 /* DataManager.swift */,
 				0E589B261EE6E0F0006DFD47 /* Models */,
 				0E589B231EE6D99B006DFD47 /* ConnectionHandler */,
 				0E8683441EDED1630044A18A /* Cells */,
@@ -305,6 +316,7 @@
 				0E8683271EDECC820044A18A /* AppDelegate.swift in Sources */,
 				0E589B251EE6DAC5006DFD47 /* ConnectionHandler.swift in Sources */,
 				0E589B621EE6E570006DFD47 /* Player+CoreDataProperties.swift in Sources */,
+				059547C11EE9779D008CC099 /* DataManager.swift in Sources */,
 				0E8683481EDED1FC0044A18A /* ProfileCell.swift in Sources */,
 				0E8683461EDED1E20044A18A /* RankingCell.swift in Sources */,
 				0E86833D1EDED0040044A18A /* RecentGamesViewController.swift in Sources */,

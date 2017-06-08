@@ -233,7 +233,6 @@ class ConnectionHandler: NSObject {
                 
                 do {
                     try managedContext.save()
-                    print(game)
                 } catch let error as NSError {
                     print("Could not save. \(error), \(error.userInfo)")
                 }
