@@ -31,7 +31,7 @@ class DataManager: NSObject {
             var result = [ [:] ]
             
             for player in players {
-            result.append( ["id": player.id ?? "", "rank": player.rank ?? "", "name": player.name ?? "", "score": player.score ?? "", "playingSince": player.playingSince ?? ""] )
+            result.append( ["id": player.remoteId ?? "", "rank": player.rank ?? "", "name": player.name ?? "", "score": player.score ?? "", "playingSince": player.playingSince ?? ""] )
             }
             if(result[0].isEmpty){
                 result.remove(at: 0)
@@ -91,7 +91,7 @@ class DataManager: NSObject {
             var result = [ [:] ]
             
             for tournament in tournaments {
-                result.append( ["tournamentId": tournament.id ?? "", "name": tournament.name ?? ""] )
+                result.append( ["tournamentId": tournament.remoteId ?? "", "name": tournament.name ?? ""] )
             }
             if(result[0].isEmpty){
                 result.remove(at: 0)
@@ -103,7 +103,7 @@ class DataManager: NSObject {
         }
     }
 
-    public func GetGames() -> Any {
+    public func GetGames() -> Array<Any> {
         
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -129,7 +129,8 @@ class DataManager: NSObject {
                 let playerB = players.filter({
                     ((game.blackPlayerId == (($0 as! [String:Any])["id"] as! String))) })[0]
                
-                result.append( ["whitePlayerName": (playerW as! [String:Any])["name"]  ])//, "whiteScoreChange":game.whiteScoreChange, "blackPlayerName":playerB["name"], "blackScoreChange":game.blackScoreChange, "date":game.date , "id":game.id ] )
+                result.append( [ "whitePlayerName": (playerW as! [String:Any])["name"], "blackPlayerName": (playerB as! [String:Any])["name"], "whiteScoreChange":game.whiteScoreChange , "blackScoreChange":game.blackScoreChange,  "date":game.date, "id":game.remoteId ])
+                    //, "whiteScoreChange":game.whiteScoreChange, "blackPlayerName":playerB["name"], "blackScoreChange":game.blackScoreChange, "date":game.date , "id":game.id ] )
             }
             if(result[0].isEmpty){
                 result.remove(at: 0)

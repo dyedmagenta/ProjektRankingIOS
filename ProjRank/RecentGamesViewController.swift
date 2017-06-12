@@ -11,28 +11,43 @@ import Alamofire
 import CoreData
 
 class RecentGamesViewController: UIViewController {
-
+	
     var handler: ConnectionHandler = ConnectionHandler()
     var dataManager: DataManager = DataManager()
-    
-    
-    private let persistentContainer = NSPersistentContainer(name: "Game")
- 
     
     @IBOutlet weak var recentGamesTable: UITableView!
     
     @IBAction func refreshData(_ sender: Any) {
             handler.refreshAllData()
-            print(dataManager.GetGames())
+        self.recentGamesTable.reloadData()
     }
     
-    var games = [(whiteName: String, whiteScore: String, blackName: String, blackScore: String, date: String)]()
+    var games = [Game]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        recentGamesTable.delegate = self
+        recentGamesTable.dataSource = self
         
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+
+        
+        let gamesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Game")
+        do {
+            games = try managedContext.fetch(gamesFetch) as! [Game]
+        }
+        catch {
+            fatalError("Failed to fetch games: \(error)")
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,9 +58,7 @@ class RecentGamesViewController: UIViewController {
 
 }
 
-extension RecentGamesViewController: UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate {
-    
-    
+extension RecentGamesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -59,7 +72,7 @@ extension RecentGamesViewController: UITableViewDelegate, UITableViewDataSource,
         
         
         if(indexPath.row == 0) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentHeaderCell", for: indexPath) as! ProfileCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as! ProfileCell
             
             cell.player1Label.text = "White Player"
             cell.player1ScoreLabel.text = ""
@@ -70,13 +83,12 @@ extension RecentGamesViewController: UITableViewDelegate, UITableViewDataSource,
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecentCell", for: indexPath) as! ProfileCell
-            
-            let game = games[indexPath.row]
-            cell.player1Label.text = game.whiteName
-            cell.player1ScoreLabel.text = game.whiteScore
-            cell.player2Label.text = game.blackName
-            cell.player2ScoreLabel.text = game.blackScore
-            cell.dateLabel.text = game.date
+            print(games[indexPath.row])
+            cell.player1Label.text = games[indexPath.row].whitePlayer?.name
+            cell.player1ScoreLabel.text = games[indexPath.row].whiteScoreChange
+            cell.player2Label.text = games[indexPath.row].blackPlayer?.name
+            cell.player2ScoreLabel.text = games[indexPath.row].blackScoreChange
+            cell.dateLabel.text = games[indexPath.row].date
             
             return cell
         }

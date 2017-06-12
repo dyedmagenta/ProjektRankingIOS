@@ -19,8 +19,6 @@ class ConnectionHandler: NSObject {
     
     var isRefreshing: Bool = false;
     
-    
-    
     func refreshAllData ()  {
         
         for table in tables {
@@ -60,12 +58,7 @@ class ConnectionHandler: NSObject {
         }
         
         let managedContext =
-            appDelegate.persistentContainer.viewContext
-        
-        
-        let entityPlayer =
-            NSEntityDescription.entity(forEntityName: "Player",
-                                       in: managedContext)!
+            appDelegate.persistentContainer.viewContext       
         
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
         let request = NSBatchDeleteRequest(fetchRequest: fetch)
@@ -80,18 +73,14 @@ class ConnectionHandler: NSObject {
         
         
         if let tab = json.array {
-            for p in tab {
-                let player = NSManagedObject(entity: entityPlayer,
-                                             insertInto: managedContext)
+            for json in tab {
                 
-                player.setValue("\(p["id"])", forKeyPath: "id")
-                player.setValue(p["name"].string, forKeyPath: "name")
-                player.setValue("\(p["rank"])", forKeyPath: "rank")
-                player.setValue("\(p["score"])", forKeyPath: "score")
-                player.setValue(p["playingSince"].string, forKeyPath: "playingSince")
+                let dict = json.dictionaryObject
+                let player = Player.player(withDictionary: dict as! [String : String], inContext: managedContext)
+                
                 do {
                     try managedContext.save()
-                    //print(player)
+                    print(player)
                 } catch let error as NSError {
                     print("Could not save. \(error), \(error.userInfo)")
                 }
@@ -126,15 +115,15 @@ class ConnectionHandler: NSObject {
         
         
         if let tab = json.array {
-            for p in tab {
-                let tournament = NSManagedObject(entity: entityTournament,
-                                             insertInto: managedContext)
+            for json in tab {
                 
-                tournament.setValue("\(p["id"])", forKeyPath: "id")
-                tournament.setValue(p["name"].string, forKeyPath: "name")
+                
+                let dict = json.dictionaryObject
+                let tournament = Tournament.tournament(withDictionary: dict as! [String : String], inContext: managedContext)
                 
                 do {
                     try managedContext.save()
+                    print(tournament)
                 } catch let error as NSError {
                     print("Could not save. \(error), \(error.userInfo)")
                 }
@@ -181,7 +170,6 @@ class ConnectionHandler: NSObject {
                 
                 do {
                     try managedContext.save()
-                    print(news)
                 } catch let error as NSError {
                     print("Could not save. \(error), \(error.userInfo)")
                 }
@@ -214,22 +202,13 @@ class ConnectionHandler: NSObject {
             
         } catch let error as NSError{
             print("Could not save. \(error), \(error.userInfo)")
-        }
-        
-        
+        }        
         
         if let tab = json.array {
-            for p in tab {
-                let game = NSManagedObject(entity: entityGame,
-                                             insertInto: managedContext)
+            for json in tab {
                 
-                game.setValue("\(p["id"])", forKeyPath: "id")
-                game.setValue("\(p["whitePlayerId"])", forKeyPath: "whitePlayerId")
-                game.setValue("\(p["blackPlayerId"])", forKeyPath: "blackPlayerId")
-                game.setValue("\(p["tournamentId"])", forKeyPath: "tournamentId")
-                game.setValue("\(p["whiteScoreChange"])", forKeyPath: "whiteScoreChange")
-                game.setValue("\(p["blackScoreChange"])", forKeyPath: "blackScoreChange")
-                game.setValue(p["date"].string, forKeyPath: "date")
+                let dict = json.dictionaryObject
+                let game = Game.game(withDictionary: dict as! [String : String], inContext: managedContext)
                 
                 do {
                     try managedContext.save()

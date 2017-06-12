@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		059547C11EE9779D008CC099 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059547C01EE9779D008CC099 /* DataManager.swift */; };
 		0E589B251EE6DAC5006DFD47 /* ConnectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E589B241EE6DAC5006DFD47 /* ConnectionHandler.swift */; };
-		0E589B5F1EE6E570006DFD47 /* News+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E589B571EE6E570006DFD47 /* News+CoreDataClass.swift */; };
-		0E589B601EE6E570006DFD47 /* News+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E589B581EE6E570006DFD47 /* News+CoreDataProperties.swift */; };
-		0E589B611EE6E570006DFD47 /* Player+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E589B591EE6E570006DFD47 /* Player+CoreDataClass.swift */; };
-		0E589B621EE6E570006DFD47 /* Player+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E589B5A1EE6E570006DFD47 /* Player+CoreDataProperties.swift */; };
-		0E589B631EE6E570006DFD47 /* Tournament+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E589B5B1EE6E570006DFD47 /* Tournament+CoreDataClass.swift */; };
-		0E589B641EE6E570006DFD47 /* Tournament+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E589B5C1EE6E570006DFD47 /* Tournament+CoreDataProperties.swift */; };
-		0E589B651EE6E570006DFD47 /* Game+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E589B5D1EE6E570006DFD47 /* Game+CoreDataClass.swift */; };
-		0E589B661EE6E570006DFD47 /* Game+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E589B5E1EE6E570006DFD47 /* Game+CoreDataProperties.swift */; };
+		0E6B459C1EEEBDC800383CB6 /* Tournament+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B45941EEEBDC800383CB6 /* Tournament+CoreDataClass.swift */; };
+		0E6B459D1EEEBDC800383CB6 /* Tournament+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B45951EEEBDC800383CB6 /* Tournament+CoreDataProperties.swift */; };
+		0E6B459E1EEEBDC800383CB6 /* News+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B45961EEEBDC800383CB6 /* News+CoreDataClass.swift */; };
+		0E6B459F1EEEBDC800383CB6 /* News+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B45971EEEBDC800383CB6 /* News+CoreDataProperties.swift */; };
+		0E6B45A01EEEBDC800383CB6 /* Game+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B45981EEEBDC800383CB6 /* Game+CoreDataClass.swift */; };
+		0E6B45A11EEEBDC800383CB6 /* Game+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B45991EEEBDC800383CB6 /* Game+CoreDataProperties.swift */; };
+		0E6B45A21EEEBDC800383CB6 /* Player+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B459A1EEEBDC800383CB6 /* Player+CoreDataClass.swift */; };
+		0E6B45A31EEEBDC800383CB6 /* Player+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B459B1EEEBDC800383CB6 /* Player+CoreDataProperties.swift */; };
 		0E8683271EDECC820044A18A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8683261EDECC820044A18A /* AppDelegate.swift */; };
 		0E8683291EDECC820044A18A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8683281EDECC820044A18A /* ViewController.swift */; };
 		0E86832C1EDECC820044A18A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E86832A1EDECC820044A18A /* Main.storyboard */; };
@@ -35,14 +35,14 @@
 /* Begin PBXFileReference section */
 		059547C01EE9779D008CC099 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0E589B241EE6DAC5006DFD47 /* ConnectionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionHandler.swift; sourceTree = "<group>"; };
-		0E589B571EE6E570006DFD47 /* News+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0E589B581EE6E570006DFD47 /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0E589B591EE6E570006DFD47 /* Player+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0E589B5A1EE6E570006DFD47 /* Player+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0E589B5B1EE6E570006DFD47 /* Tournament+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tournament+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0E589B5C1EE6E570006DFD47 /* Tournament+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tournament+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0E589B5D1EE6E570006DFD47 /* Game+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0E589B5E1EE6E570006DFD47 /* Game+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0E6B45941EEEBDC800383CB6 /* Tournament+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tournament+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0E6B45951EEEBDC800383CB6 /* Tournament+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tournament+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0E6B45961EEEBDC800383CB6 /* News+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0E6B45971EEEBDC800383CB6 /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0E6B45981EEEBDC800383CB6 /* Game+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0E6B45991EEEBDC800383CB6 /* Game+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0E6B459A1EEEBDC800383CB6 /* Player+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0E6B459B1EEEBDC800383CB6 /* Player+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0E8683231EDECC820044A18A /* ProjRank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjRank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8683261EDECC820044A18A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E8683281EDECC820044A18A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,14 +92,14 @@
 		0E589B261EE6E0F0006DFD47 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0E589B571EE6E570006DFD47 /* News+CoreDataClass.swift */,
-				0E589B581EE6E570006DFD47 /* News+CoreDataProperties.swift */,
-				0E589B591EE6E570006DFD47 /* Player+CoreDataClass.swift */,
-				0E589B5A1EE6E570006DFD47 /* Player+CoreDataProperties.swift */,
-				0E589B5B1EE6E570006DFD47 /* Tournament+CoreDataClass.swift */,
-				0E589B5C1EE6E570006DFD47 /* Tournament+CoreDataProperties.swift */,
-				0E589B5D1EE6E570006DFD47 /* Game+CoreDataClass.swift */,
-				0E589B5E1EE6E570006DFD47 /* Game+CoreDataProperties.swift */,
+				0E6B45941EEEBDC800383CB6 /* Tournament+CoreDataClass.swift */,
+				0E6B45951EEEBDC800383CB6 /* Tournament+CoreDataProperties.swift */,
+				0E6B45961EEEBDC800383CB6 /* News+CoreDataClass.swift */,
+				0E6B45971EEEBDC800383CB6 /* News+CoreDataProperties.swift */,
+				0E6B45981EEEBDC800383CB6 /* Game+CoreDataClass.swift */,
+				0E6B45991EEEBDC800383CB6 /* Game+CoreDataProperties.swift */,
+				0E6B459A1EEEBDC800383CB6 /* Player+CoreDataClass.swift */,
+				0E6B459B1EEEBDC800383CB6 /* Player+CoreDataProperties.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8C790FDA18694E1B08543B2A /* [CP] Copy Pods Resources */ = {
@@ -303,24 +303,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E8683411EDED02A0044A18A /* ProfileViewController.swift in Sources */,
-				0E589B631EE6E570006DFD47 /* Tournament+CoreDataClass.swift in Sources */,
+				0E6B45A01EEEBDC800383CB6 /* Game+CoreDataClass.swift in Sources */,
 				0E8683291EDECC820044A18A /* ViewController.swift in Sources */,
 				0E86832F1EDECC830044A18A /* ProjRank.xcdatamodeld in Sources */,
-				0E589B611EE6E570006DFD47 /* Player+CoreDataClass.swift in Sources */,
-				0E589B5F1EE6E570006DFD47 /* News+CoreDataClass.swift in Sources */,
-				0E589B641EE6E570006DFD47 /* Tournament+CoreDataProperties.swift in Sources */,
-				0E589B601EE6E570006DFD47 /* News+CoreDataProperties.swift in Sources */,
 				0E8683431EDED0760044A18A /* RankingViewController.swift in Sources */,
-				0E589B651EE6E570006DFD47 /* Game+CoreDataClass.swift in Sources */,
 				0E86834A1EDED2250044A18A /* RecentCell.swift in Sources */,
 				0E8683271EDECC820044A18A /* AppDelegate.swift in Sources */,
 				0E589B251EE6DAC5006DFD47 /* ConnectionHandler.swift in Sources */,
-				0E589B621EE6E570006DFD47 /* Player+CoreDataProperties.swift in Sources */,
+				0E6B459F1EEEBDC800383CB6 /* News+CoreDataProperties.swift in Sources */,
 				059547C11EE9779D008CC099 /* DataManager.swift in Sources */,
 				0E8683481EDED1FC0044A18A /* ProfileCell.swift in Sources */,
 				0E8683461EDED1E20044A18A /* RankingCell.swift in Sources */,
+				0E6B45A21EEEBDC800383CB6 /* Player+CoreDataClass.swift in Sources */,
+				0E6B45A31EEEBDC800383CB6 /* Player+CoreDataProperties.swift in Sources */,
+				0E6B45A11EEEBDC800383CB6 /* Game+CoreDataProperties.swift in Sources */,
+				0E6B459C1EEEBDC800383CB6 /* Tournament+CoreDataClass.swift in Sources */,
 				0E86833D1EDED0040044A18A /* RecentGamesViewController.swift in Sources */,
-				0E589B661EE6E570006DFD47 /* Game+CoreDataProperties.swift in Sources */,
+				0E6B459E1EEEBDC800383CB6 /* News+CoreDataClass.swift in Sources */,
+				0E6B459D1EEEBDC800383CB6 /* Tournament+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
