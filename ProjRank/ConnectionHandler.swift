@@ -76,11 +76,9 @@ class ConnectionHandler: NSObject {
             for json in tab {
                 
                 let dict = json.dictionaryObject
-                let player = Player.player(withDictionary: dict as! [String : String], inContext: managedContext)
-                
+                let player = Player.player(withDictionary: dict as! [String : Any]!, inContext: managedContext)
                 do {
                     try managedContext.save()
-                    print(player)
                 } catch let error as NSError {
                     print("Could not save. \(error), \(error.userInfo)")
                 }
@@ -119,11 +117,10 @@ class ConnectionHandler: NSObject {
                 
                 
                 let dict = json.dictionaryObject
-                let tournament = Tournament.tournament(withDictionary: dict as! [String : String], inContext: managedContext)
+                let tournament = Tournament.tournament(withDictionary: dict as! [String : Any]!, inContext: managedContext)
                 
                 do {
                     try managedContext.save()
-                    print(tournament)
                 } catch let error as NSError {
                     print("Could not save. \(error), \(error.userInfo)")
                 }
@@ -164,7 +161,7 @@ class ConnectionHandler: NSObject {
                 let news = NSManagedObject(entity: entityNews,
                                                  insertInto: managedContext)
                 
-                news.setValue("\(p["id"])", forKeyPath: "id")
+                news.setValue("\(p["id"])", forKeyPath: "remoteId")
                 news.setValue(p["content"].string, forKeyPath: "content")
                 news.setValue(p["date"].string, forKeyPath: "date")
                 
@@ -208,8 +205,7 @@ class ConnectionHandler: NSObject {
             for json in tab {
                 
                 let dict = json.dictionaryObject
-                let game = Game.game(withDictionary: dict as! [String : String], inContext: managedContext)
-                
+                let game = Game.game(withDictionary: dict as! [String : Any]!, inContext: managedContext)
                 do {
                     try managedContext.save()
                 } catch let error as NSError {

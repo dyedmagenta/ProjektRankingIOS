@@ -34,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		059547C01EE9779D008CC099 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		0E4CDF261EEFCD2B00DD4EF8 /* ProjRank 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ProjRank 3.xcdatamodel"; sourceTree = "<group>"; };
 		0E589B241EE6DAC5006DFD47 /* ConnectionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionHandler.swift; sourceTree = "<group>"; };
 		0E6B45941EEEBDC800383CB6 /* Tournament+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tournament+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0E6B45951EEEBDC800383CB6 /* Tournament+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tournament+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -492,6 +493,7 @@
 		0E86832D1EDECC830044A18A /* ProjRank.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				0E4CDF261EEFCD2B00DD4EF8 /* ProjRank 3.xcdatamodel */,
 				0E86832E1EDECC830044A18A /* ProjRank.xcdatamodel */,
 			);
 			currentVersion = 0E86832E1EDECC830044A18A /* ProjRank.xcdatamodel */;

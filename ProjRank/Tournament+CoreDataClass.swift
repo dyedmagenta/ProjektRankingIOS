@@ -12,13 +12,13 @@ import CoreData
 
 public class Tournament: NSManagedObject {
 
-    static func tournament(withDictionary dict:[String:String], inContext context: NSManagedObjectContext) -> Tournament{
+    static func tournament(withDictionary dict:[String:Any], inContext context: NSManagedObjectContext) -> Tournament{
         
         let entityName = String(describing: Tournament.self)
         let tournament = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as! Tournament
         
-        tournament.remoteId = dict["id"]
-        tournament.name = dict["name"]
+        tournament.remoteId = dict["id"] as? String
+        tournament.name = dict["name"] as? String
         
         return tournament
     }

@@ -7,33 +7,69 @@
 //
 
 import UIKit
+import CoreData
 
 class ProfileViewController: UIViewController {
 
     
+    @IBAction func refreshButton(_ sender: Any) {
+        handler.refreshAllData()
+        loadData()
+        self.tableView.reloadData()
+    }
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var tableView: UITableView!
     
-    var pickerData: [String] = [String]	()
+    var pickerData: [Player] = [Player]()
+    var games: [Game] = [Game]()
+    var currentPlayer: Player = Player()
+    var context: NSManagedObjectContext = NSManagedObjectContext()
+    var handler: ConnectionHandler = ConnectionHandler()
     
+    @IBOutlet weak var rankLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var playingSinceLabel: UILabel!
+    
+    func loadData(){
+            guard let appDelegate =
+                UIApplication.shared.delegate as? AppDelegate else {
+                    return
+            }
+            let managedContext =
+                appDelegate.persistentContainer.viewContext
+            context = managedContext
+            let playersFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+            do {
+                pickerData = try managedContext.fetch(playersFetch) as! [Player]
+                
+            }
+            catch {
+                fatalError("Failed to fetch games: \(error)")
+            }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        loadData()
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
+       
         
-        pickerData = ["Jan","Dzban", "Man"]
+        rankLabel.text = pickerData[0].rank
+        nameLabel.text = pickerData[0].name
+        scoreLabel.text = pickerData[0].score
+        playingSinceLabel.text = pickerData[0].playingSince
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
     }
-    
-
-
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -43,18 +79,33 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource, UIP
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return games.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
         if(indexPath.row == 0) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentHeaderCell", for: indexPath) as! RecentCell
-           
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as! ProfileCell
+            
+            cell.player1Label.text = "White Player"
+            cell.player1ScoreLabel.text = ""
+            cell.player2Label.text = "Black Player"
+            cell.player2ScoreLabel.text = ""
+            cell.dateLabel.text = "Date"
+            
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentCell", for: indexPath) as! RecentCell
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentCell", for: indexPath) as! ProfileCell
+            
+            let game = games[indexPath.row - 1]
+            
+            cell.player1Label.text = game.whitePlayer!.name
+            cell.player1ScoreLabel.text = " (" + game.whiteScoreChange! + ")"
+            cell.player2Label.text = game.blackPlayer!.name
+            cell.player2ScoreLabel.text = " (" + game.blackScoreChange! + ")"
+            cell.dateLabel.text = game.date
             
             return cell
         }
@@ -70,7 +121,30 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource, UIP
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        
+        return pickerData[row].name
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        rankLabel.text = pickerData[row].rank
+        nameLabel.text = pickerData[row].name
+        scoreLabel.text = pickerData[row].score
+        playingSinceLabel.text = pickerData[row].playingSince
+        currentPlayer = pickerData[row]
+        
+        
+        
+        let gamesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Game")
+        gamesFetch.predicate = NSPredicate(format: "whitePlayerId == %@ || blackPlayerId == %@", pickerData[row].remoteId!, pickerData[row].remoteId!)
+        do {
+            let fetchedGame = try context.fetch(gamesFetch) as! [Game]
+            games = fetchedGame
+        }
+        catch {
+            fatalError("Failed to fetch games: \(error)")
+        }
+        
+        tableView.reloadData()
     }
     
 }

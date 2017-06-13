@@ -13,33 +13,28 @@ import CoreData
 class RecentGamesViewController: UIViewController {
 	
     var handler: ConnectionHandler = ConnectionHandler()
-    var dataManager: DataManager = DataManager()
-    
+    var context: NSManagedObjectContext = NSManagedObjectContext()
     @IBOutlet weak var recentGamesTable: UITableView!
-    
+    @IBOutlet weak var newsLabel: UITextView!
     @IBAction func refreshData(_ sender: Any) {
-            handler.refreshAllData()
+        
+        handler.refreshAllData()
+        loadModel()
         self.recentGamesTable.reloadData()
     }
     
     var games = [Game]()
+    var news = [News]()
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        recentGamesTable.delegate = self
-        recentGamesTable.dataSource = self
-        
+    func loadModel(){
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
                 return
         }
-        
         let managedContext =
             appDelegate.persistentContainer.viewContext
-
         
+        context = managedContext
         let gamesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Game")
         do {
             games = try managedContext.fetch(gamesFetch) as! [Game]
@@ -47,7 +42,30 @@ class RecentGamesViewController: UIViewController {
         catch {
             fatalError("Failed to fetch games: \(error)")
         }
+        
+        let newsFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        do {
+            news = try managedContext.fetch(newsFetch) as! [News]
+        }
+        catch {
+            fatalError("Failed to fetch games: \(error)")
+        }
 
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        loadModel()
+        recentGamesTable.delegate = self
+        recentGamesTable.dataSource = self
+        
+        var newsText: String = ""
+        for new in news {
+            newsText = newsText + new.content! + "\n\n"
+        }
+        newsLabel.text = newsText
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,7 +83,7 @@ extension RecentGamesViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return games.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,13 +100,16 @@ extension RecentGamesViewController: UITableViewDelegate, UITableViewDataSource 
             
             return cell
         } else {
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecentCell", for: indexPath) as! ProfileCell
-            print(games[indexPath.row])
-            cell.player1Label.text = games[indexPath.row].whitePlayer?.name
-            cell.player1ScoreLabel.text = games[indexPath.row].whiteScoreChange
-            cell.player2Label.text = games[indexPath.row].blackPlayer?.name
-            cell.player2ScoreLabel.text = games[indexPath.row].blackScoreChange
-            cell.dateLabel.text = games[indexPath.row].date
+            
+            let game = games[indexPath.row - 1]
+            
+            cell.player1Label.text = game.whitePlayer!.name
+            cell.player1ScoreLabel.text = " (" + game.whiteScoreChange! + ")"
+            cell.player2Label.text = game.blackPlayer!.name
+            cell.player2ScoreLabel.text = " (" + game.blackScoreChange! + ")"
+            cell.dateLabel.text = game.date
             
             return cell
         }

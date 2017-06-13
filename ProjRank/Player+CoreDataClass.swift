@@ -14,16 +14,16 @@ public class Player: NSManagedObject {
 
     
     
-    static func player(withDictionary dict:[String:String], inContext context: NSManagedObjectContext) -> Player{
+    static func player(withDictionary dict:[String:Any], inContext context: NSManagedObjectContext) -> Player{
         
         let entityName = String(describing: Player.self)
         let player = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as! Player
         
-        player.remoteId = dict["id"]
-        player.name = dict["name"]
-        player.rank = dict["rank"]
-        player.playingSince = dict["playingSince"]
-        player.score = dict["score"]
+        player.remoteId = String( describing: dict["id"] as! NSNumber)
+        player.name = dict["name"] as? String
+        player.rank = String( describing: dict["rank"] as! NSNumber)
+        player.playingSince = dict["playingSince"] as? String
+        player.score = String( describing: dict["score"] as! NSNumber)
         
         return player
     }

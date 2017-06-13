@@ -172,6 +172,13 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="26Z-eT-ZYF" secondAttribute="trailing" id="NtN-tW-02Q"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="vO7-AU-1rF" id="tgL-k0-uAm"/>
+                                            <outlet property="player1Label" destination="SDo-EP-EnB" id="7Aw-zt-eLi"/>
+                                            <outlet property="player1ScoreLabel" destination="V5a-Xx-qJP" id="XkO-N7-mxS"/>
+                                            <outlet property="player2Label" destination="OvZ-7y-g3V" id="Rq4-g0-gzk"/>
+                                            <outlet property="player2ScoreLabel" destination="BUH-aJ-dhU" id="2IQ-Iq-iri"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -188,6 +195,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="SQu-Qn-TYA"/>
                     <connections>
+                        <outlet property="newsLabel" destination="OhJ-4i-G4g" id="ikq-ML-aFC"/>
                         <outlet property="recentGamesTable" destination="E2M-9L-SqI" id="5ho-4W-8oU"/>
                     </connections>
                 </viewController>
@@ -212,12 +220,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Ranking" id="U1a-ei-rpM">
-                                        <leftBarButtonItems>
-                                            <barButtonItem systemItem="add" id="hxL-YP-7hm"/>
-                                            <barButtonItem systemItem="edit" id="rgL-np-aZz"/>
-                                            <barButtonItem systemItem="trash" id="kMx-ID-ecb"/>
-                                        </leftBarButtonItems>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="RtJ-4S-BEy"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="RtJ-4S-BEy">
+                                            <connections>
+                                                <action selector="refreshButtonAction:" destination="6LD-WO-9og" id="2Ke-FV-Zif"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -238,7 +245,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankingHeaders" id="AgZ-G2-RAU" customClass="RankingCell" customModule="ProjRank" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankingHeader" id="AgZ-G2-RAU" customClass="RankingCell" customModule="ProjRank" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AgZ-G2-RAU" id="kLc-iO-KN1" customClass="RankingHeadersCell" customModule="ProjRank" customModuleProvider="target">
@@ -273,16 +280,11 @@
                                                 <constraint firstItem="bPh-En-goU" firstAttribute="leading" secondItem="kLc-iO-KN1" secondAttribute="leadingMargin" id="BhX-O1-VXO"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bPh-En-goU" secondAttribute="trailing" id="qet-96-Yl5"/>
                                             </constraints>
-                                            <connections>
-                                                <outlet property="dateLabel" destination="bOk-8c-0JU" id="PWN-Cc-8yx"/>
-                                                <outlet property="playersLabel" destination="pSz-bQ-KgN" id="bAH-Ui-Os3"/>
-                                                <outlet property="scoreLabel" destination="fRt-td-d8t" id="612-sS-jLK"/>
-                                            </connections>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="playerNameLabel" destination="fRt-td-d8t" id="NIP-3q-Y4E"/>
-                                            <outlet property="rankLabel" destination="pSz-bQ-KgN" id="Vuh-P2-FEO"/>
-                                            <outlet property="scoreLabel" destination="bOk-8c-0JU" id="Mx3-lL-gXq"/>
+                                            <outlet property="playerNameLabel" destination="fRt-td-d8t" id="t9g-RJ-68R"/>
+                                            <outlet property="rankLabel" destination="pSz-bQ-KgN" id="zTQ-KQ-230"/>
+                                            <outlet property="scoreLabel" destination="bOk-8c-0JU" id="rBz-9Y-b4b"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankingCell" id="RrI-mP-3bx" customClass="RankingCell" customModule="ProjRank" customModuleProvider="target">
@@ -322,9 +324,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="playerNameLabel" destination="pqB-Ei-nHy" id="RoO-6o-4mx"/>
-                                            <outlet property="rankLabel" destination="EAZ-Fm-QTc" id="NnO-g1-DMS"/>
-                                            <outlet property="scoreLabel" destination="0FQ-67-1Y8" id="yQE-15-Vm4"/>
+                                            <outlet property="playerNameLabel" destination="pqB-Ei-nHy" id="JRE-9P-fuJ"/>
+                                            <outlet property="rankLabel" destination="EAZ-Fm-QTc" id="sHP-FN-cka"/>
+                                            <outlet property="scoreLabel" destination="0FQ-67-1Y8" id="fpm-BZ-zps"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -333,6 +335,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ranking" id="oZS-LL-MAS"/>
+                    <connections>
+                        <outlet property="tableView" destination="ok3-54-fTv" id="cwT-7Z-fjy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Syl-bs-mdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -355,7 +360,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Profile" id="ZYf-b8-fHQ">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="rSX-lZ-KaK"/>
+                                        <leftBarButtonItems>
+                                            <barButtonItem systemItem="add" id="hxL-YP-7hm"/>
+                                            <barButtonItem systemItem="edit" id="rgL-np-aZz"/>
+                                            <barButtonItem systemItem="trash" id="kMx-ID-ecb"/>
+                                        </leftBarButtonItems>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="rSX-lZ-KaK">
+                                            <connections>
+                                                <action selector="refreshButton:" destination="QYc-uw-B3s" id="Nu3-gq-K3P"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -364,7 +378,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="oh2-3j-NOE">
-                                        <rect key="frame" x="76" y="108" width="222" height="103"/>
+                                        <rect key="frame" x="76" y="108" width="222" height="82"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aa5-3x-ilt">
@@ -428,23 +442,6 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="19.05.0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RP-qN-cmR">
-                                                        <rect key="frame" x="111" y="0.0" width="111" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QEv-vG-5NC">
-                                                <rect key="frame" x="0.0" y="82" width="222" height="20.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Age: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ME3-Jj-1Lo">
-                                                        <rect key="frame" x="0.0" y="0.0" width="111" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVb-Jx-IQT">
                                                         <rect key="frame" x="111" y="0.0" width="111" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -583,6 +580,13 @@
                                                         <constraint firstAttribute="trailingMargin" secondItem="Gon-bP-PHh" secondAttribute="trailing" id="xR8-rs-10z"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="dateLabel" destination="Yl6-S4-jax" id="ui0-Kh-M28"/>
+                                                    <outlet property="player1Label" destination="v3Y-am-Scp" id="2Bg-JC-24G"/>
+                                                    <outlet property="player1ScoreLabel" destination="N7V-H2-CtR" id="OnC-VG-8bz"/>
+                                                    <outlet property="player2Label" destination="m90-sS-YqD" id="6Hq-mB-qhm"/>
+                                                    <outlet property="player2ScoreLabel" destination="fI1-Kl-Xpw" id="hqt-69-svb"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -597,8 +601,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="C0e-fe-PDo"/>
                     <connections>
+                        <outlet property="nameLabel" destination="0wE-Nz-MxW" id="9nA-zs-9Xs"/>
                         <outlet property="pickerView" destination="BTn-IZ-1fe" id="N0u-Bp-TY0"/>
-                        <outlet property="tableView" destination="Dad-LV-aN8" id="qpP-d0-48a"/>
+                        <outlet property="playingSinceLabel" destination="3RP-qN-cmR" id="ch9-QG-4XQ"/>
+                        <outlet property="rankLabel" destination="Hqp-bb-86h" id="8cH-yO-T46"/>
+                        <outlet property="scoreLabel" destination="66Y-oD-tCT" id="adE-el-13l"/>
+                        <outlet property="tableView" destination="Dad-LV-aN8" id="zI9-To-MA9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0M-E0-onq" userLabel="First Responder" sceneMemberID="firstResponder"/>
