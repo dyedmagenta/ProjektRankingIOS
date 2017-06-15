@@ -50,7 +50,7 @@ class ConnectionHandler: NSObject {
         
     }
     
-    func insertPlayer(json: JSON){
+    private func insertPlayer(json: JSON){
         
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -87,7 +87,7 @@ class ConnectionHandler: NSObject {
         }
 
     }
-    func insertTournament(json: JSON){
+    private func insertTournament(json: JSON){
         
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -130,7 +130,7 @@ class ConnectionHandler: NSObject {
         
     }
     
-    func insertNews(json: JSON){
+    private func insertNews(json: JSON){
         
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -176,7 +176,7 @@ class ConnectionHandler: NSObject {
         
     }
     
-    func insertGame(json: JSON){
+    private func insertGame(json: JSON){
         
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -216,6 +216,77 @@ class ConnectionHandler: NSObject {
         }
         
     }
+    
+    func createNewGame(whitePlayerId: String, blackPlayerId: String, whiteScoreChange: String, blackScoreChange: String, date: String) {
+        
+        let json = ["whitePlayerId":whitePlayerId, "blackPlayerId":blackPlayerId, "whiteScoreChange":whiteScoreChange, "blackScoreChange":blackScoreChange, "date":date]
+        let connectionGameUrl = "\(connectionString)game"
+        
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        
+        Alamofire.request(connectionGameUrl, method: HTTPMethod.post, parameters: json, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            
+            switch response.result{
+                
+            case .success(let value):
+                let swiftyJsonVar = JSON(response.result.value!)
+                let dict = swiftyJsonVar.dictionaryObject
+                let game = Game.game(withDictionary: dict as! [String : Any]!, inContext: managedContext)
+                do {
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
 
+            case .failure(let value):
+                print(value)
+            }
+        }
+        
+    }
+    func updateGame(remoteId: String, whitePlayerId: String, blackPlayerId: String, whiteScoreChange: String, blackScoreChange: String, date: String) {
+        
+        let json = ["id":remoteId, "whitePlayerId":whitePlayerId, "blackPlayerId":blackPlayerId, "whiteScoreChange":whiteScoreChange, "blackScoreChange":blackScoreChange, "date":date]
+        let connectionGameUrl = "\(connectionString)game/\(remoteId)"
+
+        
+        Alamofire.request(connectionGameUrl, method: HTTPMethod.put, parameters: json, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            
+            switch response.result{
+                
+            case .success(let value):
+                self.refreshAllData()
+                
+            case .failure(let value):
+                print(value)
+            }
+        }
+
+    }
+    func deleteGame(remoteId: String){
+        let json = ["id":remoteId]
+        let connectionGameUrl = "\(connectionString)game/\(remoteId)"
+        
+        
+        Alamofire.request(connectionGameUrl, method: HTTPMethod.delete, parameters: json, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            
+            switch response.result{
+                
+            case .success(let value):
+                self.refreshAllData()
+                
+            case .failure(let value):
+                print(value)
+            }
+        }
+    }
+    
     
 }

@@ -12,6 +12,18 @@ import CoreData
 class ProfileViewController: UIViewController {
 
     
+    @IBAction func addGameAction(_ sender: Any) {
+        
+        let vc = (
+            storyboard?.instantiateViewController(
+                withIdentifier: "GameViewController")
+            )!
+        vc.modalTransitionStyle = .crossDissolve
+        let vv = vc as! GameViewController
+        vv.players = pickerData
+        present(vc, animated: true, completion: nil)
+        
+    }
     @IBAction func refreshButton(_ sender: Any) {
         handler.refreshAllData()
         loadData()
@@ -19,12 +31,31 @@ class ProfileViewController: UIViewController {
     }
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func editAction(_ sender: Any) {
+        let vc = (
+            storyboard?.instantiateViewController(
+                withIdentifier: "GameViewController")
+            )!
+        vc.modalTransitionStyle = .crossDissolve
+        let vv = vc as! GameViewController
+        vv.players = pickerData
+        vv.game = games[selectedGameIndex]
+        present(vc, animated: true, completion: nil)
+    }
     
+    @IBAction func deleteAction(_ sender: Any) {
+        if selectedGameIndex < 0 {
+            return
+        }
+        handler.deleteGame(remoteId: games[selectedGameIndex].remoteId!)
+        self.tableView.reloadData()
+    }
     var pickerData: [Player] = [Player]()
     var games: [Game] = [Game]()
     var currentPlayer: Player = Player()
     var context: NSManagedObjectContext = NSManagedObjectContext()
     var handler: ConnectionHandler = ConnectionHandler()
+    var selectedGameIndex: Int = 0
     
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -63,6 +94,17 @@ class ProfileViewController: UIViewController {
         nameLabel.text = pickerData[0].name
         scoreLabel.text = pickerData[0].score
         playingSinceLabel.text = pickerData[0].playingSince
+        let gamesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Game")
+        gamesFetch.predicate = NSPredicate(format: "whitePlayerId == %@ || blackPlayerId == %@", pickerData[0].remoteId!, pickerData[0].remoteId!)
+        do {
+            let fetchedGame = try context.fetch(gamesFetch) as! [Game]
+            games = fetchedGame
+        }
+        catch {
+            fatalError("Failed to fetch games: \(error)")
+        }
+
+        
         tableView.reloadData()
     }
 
@@ -145,6 +187,13 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource, UIP
         }
         
         tableView.reloadData()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedGameIndex = indexPath.row - 1
+        
     }
     
 }

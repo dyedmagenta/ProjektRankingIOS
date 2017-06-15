@@ -61,6 +61,10 @@ class RecentGamesViewController: UIViewController {
         recentGamesTable.delegate = self
         recentGamesTable.dataSource = self
         
+        if(games.count == 0){
+            handler.refreshAllData()
+        }
+        
         var newsText: String = ""
         for new in news {
             newsText = newsText + new.content! + "\n\n"
@@ -104,6 +108,7 @@ extension RecentGamesViewController: UITableViewDelegate, UITableViewDataSource 
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecentCell", for: indexPath) as! ProfileCell
             
             let game = games[indexPath.row - 1]
+
             
             cell.player1Label.text = game.whitePlayer!.name
             cell.player1ScoreLabel.text = " (" + game.whiteScoreChange! + ")"
